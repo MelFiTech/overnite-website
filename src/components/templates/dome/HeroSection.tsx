@@ -1,30 +1,37 @@
 import Image from 'next/image';
+import DomeHeader from './DomeHeader';
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen bg-white relative">
-      <div className="max-w-[1200px] mx-auto px-8 pt-40 pb-28">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h1 className="text-6xl font-[500] text-black font-[family-name:var(--font-spectral)] tracking-[-0.04em]">
-              A Modern Dining Experience
-            </h1>
-            <p className="text-black/80 text-xl leading-relaxed">
-              Experience fine dining reimagined at Dome, where culinary excellence meets contemporary ambiance.
-            </p>
-            <button className="bg-black text-white px-8 py-4 rounded-lg hover:bg-black/90 transition-colors">
-              Reserve a Table
-            </button>
-          </div>
-          <div className="relative aspect-[4/3] w-full">
-            <Image
-              src="/templates/dome/hero.png"
-              alt="Modern restaurant interior"
-              fill
-              className="object-cover rounded-2xl"
-            />
-          </div>
+    <section className="relative min-h-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/templates/dome/dome-hero.png"
+          alt="Restaurant interior"
+          fill
+          className="object-cover brightness-50"
+          priority
+        />
+      </div>
+
+      <DomeHeader />
+      
+      <div className="relative z-1 text-center text-white px-8">
+        <h1 className="text-6xl md:text-7xl font-[500] mb-6 font-[family-name:var(--font-spectral)] tracking-[-0.04em]">
+          Simply Delicious <br /> Gourmet Meals
+        </h1>
+        <div className="space-y-2">
+          <p className="text-xl text-white/90">
+            The Dome, 123, Main Avenue, Barcelona
+          </p>
+          <p className="text-xl text-white/90">
+            10011
+          </p>
         </div>
+        <button className="mt-8 bg-[#C17F00] text-white px-8 py-4 rounded-full hover:bg-[#D4A853]/90 transition-colors">
+          Explore More
+        </button>
       </div>
     </section>
   );

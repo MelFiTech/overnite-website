@@ -1,7 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { ReactNode } from 'react';
 import Link from 'next/link';
-/* eslint-enable @typescript-eslint/no-unused-vars */
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -17,7 +14,7 @@ export default function Button({
   variant = 'primary',
   className = '',
   onClick
-}: ButtonProps): JSX.Element {
+}: ButtonProps) {
   const baseStyles = "inline-block rounded-lg font-medium transition-colors px-6 py-3";
   const variantStyles = {
     primary: "bg-white text-black hover:bg-white/90",
